@@ -11,16 +11,9 @@ class Question {
         }
 
 
-    guess(answer) {
-    if(this.getQuestion().isCorrectAnswer(answer)) {
-     this.score++;
-            }
-        
-        this.questionIndex++;
-        }
-
 
 }
+
 
 
 var questions = [
@@ -43,6 +36,16 @@ class Quiz {
         return this.questions[this.questionIndex];
     
     }
+
+
+    guess(answer) {
+    if(this.getQuestion().isCorrectAnswer(answer)) {
+     this.score++;
+            }
+        
+        this.questionIndex++;
+    }
+
 }
 
 

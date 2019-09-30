@@ -35,7 +35,6 @@ class Quiz {
 
 }   
 
-    
     getQuestion() {
 
         return this.questions[this.questionIndex];
@@ -43,6 +42,16 @@ class Quiz {
 }
 
 }
+
+
+function guess(id, guess) {
+    var button = document.getElementById(id);
+    button.onclick = function() {
+     quiz.guess(guess);
+     populate();
+    }
+};
+
 
 
 function populate() {
@@ -60,4 +69,8 @@ function populate() {
  
     
 };
+
+
+var quiz = new Quiz(questions);
+populate();
 

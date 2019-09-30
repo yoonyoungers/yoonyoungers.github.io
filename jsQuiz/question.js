@@ -4,19 +4,32 @@ class Question {
     this.choices = choices;
     this.answer = answer;
 
+    }
 
-    isCorrectAnswer(choice){
              return this.answer === choice;
             }
 
-}
+
+
+
+            guess(answer) {
+    if(this.getQuestion().isCorrectAnswer(answer)) {
+     this.score++;
+            }
+        
+        this.questionIndex++;
+        }
+
+
 }
 
+
 var questions = [
-new Question("Hyper Text Markup Language Stand For?", ["JavaScript", "XHTML","CSS", "HTML"], "HTML"),
-new Question("Which language is used for styling web pages?", ["HTML", "JQuery", "CSS", "XML"], "CSS"),
-new Question("What has not been covered in PUI lab?", ["HTML", "CSS","Javascript", "Java"], "Java"),
+    new Question("Hyper Text Markup Language Stand For?", ["JavaScript", "XHTML","CSS", "HTML"], "HTML"),
+    new Question("Which language is used for styling web pages?", ["HTML", "JQuery", "CSS", "XML"], "CSS"),
+    new Question("What has not been covered in PUI lab?", ["HTML", "CSS","Javascript", "Java"], "Java"),
 ];
+
 
 class Quiz {
         constructor(questions) {
@@ -25,20 +38,14 @@ class Quiz {
             this.questionIndex = 0;
 
 
-    guess(answer) {
-    if(this.getQuestion().isCorrectAnswer(answer)) {
-     this.score++;
-            }
-        
-        this.questionIndex++;
-}
 
-}   
+    }   
 
     getQuestion() {
 
         return this.questions[this.questionIndex];
     
+    }
 }
 
 

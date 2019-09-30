@@ -6,14 +6,12 @@ class Question {
 
     }
 
-        isCorrectAnswer(choice){
-             return this.answer === choice;
-            }
+    isCorrectAnswer(choice){
+        return this.answer === choice;
+        }
 
 
-
-
-            guess(answer) {
+    guess(answer) {
     if(this.getQuestion().isCorrectAnswer(answer)) {
      this.score++;
             }
@@ -41,13 +39,14 @@ class Quiz {
 
 
     }   
-
     getQuestion() {
-
         return this.questions[this.questionIndex];
     
     }
 }
+
+
+
 
 
 isEnded() {

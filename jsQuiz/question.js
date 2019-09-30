@@ -6,6 +6,7 @@ class Question {
 
     }
 
+        isCorrectAnswer(choice){
              return this.answer === choice;
             }
 
